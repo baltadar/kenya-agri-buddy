@@ -7,15 +7,15 @@ const About = () => {
     <div className="min-h-screen bg-background">
       <Header />
       
-      <div className="container mx-auto px-4 py-16 max-w-4xl">
-        <div className="text-center mb-12 animate-fade-in">
-          <div className="inline-flex p-4 bg-gradient-earth rounded-3xl shadow-medium mb-6">
-            <Leaf className="h-12 w-12 text-white" />
+      <div className="container mx-auto px-4 py-8 sm:py-12 md:py-16 max-w-4xl">
+        <div className="text-center mb-8 sm:mb-12 animate-fade-in">
+          <div className="inline-flex p-3 sm:p-4 bg-gradient-earth rounded-2xl sm:rounded-3xl shadow-medium mb-4 sm:mb-6">
+            <Leaf className="h-10 w-10 sm:h-12 sm:w-12 text-white" />
           </div>
-          <h1 className="text-5xl md:text-6xl font-bold tracking-tight text-foreground mb-4">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-foreground mb-3 sm:mb-4 px-4">
             About SmartShamba
           </h1>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto px-4">
             Empowering Kenyan farmers with intelligent farming solutions
           </p>
         </div>

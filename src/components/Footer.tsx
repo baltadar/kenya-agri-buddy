@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 
 export const Footer = () => {
   return (
-    <footer className="border-t bg-card mt-20">
-      <div className="container mx-auto px-4 py-12">
+    <footer className="border-t bg-card mt-12 sm:mt-20">
+      <div className="container mx-auto px-4 py-8 sm:py-12">
         <div className="grid md:grid-cols-3 gap-8">
           <div>
             <h3 className="font-semibold text-lg mb-4 text-foreground">SmartShamba</h3>
