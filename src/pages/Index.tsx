@@ -30,26 +30,7 @@ const Index = () => {
           </div>
         </header>
 
-        <section id="about" className="mb-20 animate-fade-in" style={{ animationDelay: "0.3s" }}>
-          <div className="bg-card border rounded-2xl p-8 md:p-12 shadow-soft">
-            <h2 className="text-3xl font-bold text-foreground mb-6">About SmartShamba</h2>
-            <div className="space-y-4 text-muted-foreground leading-relaxed">
-              <p>
-                SmartShamba is revolutionizing agriculture in Kenya by bringing cutting-edge AI technology to smallholder farmers. Our platform combines real-time weather data with advanced machine learning to provide actionable farming insights.
-              </p>
-              <p>
-                Whether you're planning your next crop cycle, optimizing irrigation, or preparing for seasonal changes, SmartShamba delivers personalized recommendations based on your location's unique climate patterns. Our 5-day weather forecasts help you make informed decisions about planting, harvesting, and crop protection.
-              </p>
-              <p className="font-medium text-foreground">
-                Empowering farmers with knowledge for better yields and sustainable farming practices.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        <section id="analyzer">
-          <FarmAnalyzer />
-        </section>
+        <FarmAnalyzer />
 
         <div className="mt-20 text-center text-sm text-muted-foreground animate-fade-in">
           <p className="max-w-2xl mx-auto leading-relaxed">
