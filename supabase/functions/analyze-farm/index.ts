@@ -72,13 +72,18 @@ Weather Data:
 - Humidity: ${weatherSummary.humidity}%
 - Conditions: ${weatherSummary.description}
 
-Please provide recommendations in 3 clear sections:
+IMPORTANT: Provide your response in plain text format with clear sections. Use numbers and line breaks for organization, but DO NOT use markdown formatting like asterisks, bold, or italics. Keep it simple and readable.
 
-1. **Crop Recommendations**: Which crops are suitable for these current conditions?
+Provide recommendations in 3 clear sections:
 
-2. **Water & Soil Management**: Irrigation advice and soil care tips based on current weather.
+1. Crop Recommendations
+List which crops are suitable for these current conditions.
 
-3. **Climate Resilience Tips**: Practical advice to prepare for weather changes.
+2. Water & Soil Management
+Provide irrigation advice and soil care tips based on current weather.
+
+3. Climate Resilience Tips
+Give practical advice to prepare for weather changes.
 
 Keep the response concise, practical, and actionable for smallholder farmers.`;
 

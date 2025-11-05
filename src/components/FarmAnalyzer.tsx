@@ -47,35 +47,37 @@ export const FarmAnalyzer = () => {
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto space-y-8 animate-fade-in">
-      <Card className="p-8 shadow-medium border-2 border-primary/10">
-        <div className="space-y-4">
+    <div className="w-full mx-auto space-y-6 animate-fade-in">
+      <Card className="p-8 shadow-soft border border-border/50 bg-card/50 backdrop-blur">
+        <div className="space-y-6">
           <div className="flex items-center gap-3">
-            <MapPin className="h-6 w-6 text-primary" />
-            <h2 className="text-2xl font-semibold text-foreground">Farm Location</h2>
+            <div className="p-2 bg-primary/10 rounded-lg">
+              <MapPin className="h-5 w-5 text-primary" />
+            </div>
+            <h2 className="text-xl font-semibold text-foreground">Enter Location</h2>
           </div>
           <div className="flex gap-3">
             <Input
-              placeholder="Enter city name (e.g., Nairobi, Nakuru)"
+              placeholder="City name (e.g., Nairobi, Nakuru, Kisumu)"
               value={location}
               onChange={(e) => setLocation(e.target.value)}
               onKeyDown={(e) => e.key === "Enter" && handleAnalyze()}
-              className="flex-1 text-lg"
+              className="flex-1 h-12 text-base border-border/50 bg-background/50"
               disabled={isAnalyzing}
             />
             <Button
               onClick={handleAnalyze}
               disabled={isAnalyzing}
               size="lg"
-              className="px-8"
+              className="px-8 h-12 shadow-soft"
             >
               {isAnalyzing ? (
                 <>
                   <Loader2 className="mr-2 h-5 w-5 animate-spin" />
-                  Analyzing...
+                  Analyzing
                 </>
               ) : (
-                "Analyze Farm"
+                "Get Insights"
               )}
             </Button>
           </div>
@@ -84,38 +86,40 @@ export const FarmAnalyzer = () => {
 
       {result && (
         <div className="space-y-6 animate-fade-in">
-          <Card className="p-6 shadow-medium bg-gradient-to-br from-secondary/5 to-secondary/10 border-2 border-secondary/20">
-            <div className="flex items-center gap-3 mb-4">
-              <CloudRain className="h-6 w-6 text-secondary" />
-              <h3 className="text-xl font-semibold text-foreground">Weather Conditions</h3>
+          <Card className="p-8 shadow-soft border border-border/50 bg-card/50 backdrop-blur">
+            <div className="flex items-center gap-3 mb-6">
+              <div className="p-2 bg-primary/10 rounded-lg">
+                <CloudRain className="h-5 w-5 text-primary" />
+              </div>
+              <h3 className="text-xl font-semibold text-foreground">Current Weather</h3>
             </div>
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-              <div className="space-y-1">
-                <p className="text-sm text-muted-foreground">Temperature</p>
-                <p className="text-2xl font-bold text-secondary">{result.weather.temp}°C</p>
+            <div className="grid grid-cols-3 gap-6">
+              <div className="space-y-2 text-center p-4 rounded-lg bg-muted/30">
+                <p className="text-xs uppercase tracking-wide text-muted-foreground font-medium">Temperature</p>
+                <p className="text-3xl font-bold text-foreground">{result.weather.temp}°C</p>
               </div>
-              <div className="space-y-1">
-                <p className="text-sm text-muted-foreground">Humidity</p>
-                <p className="text-2xl font-bold text-secondary">{result.weather.humidity}%</p>
+              <div className="space-y-2 text-center p-4 rounded-lg bg-muted/30">
+                <p className="text-xs uppercase tracking-wide text-muted-foreground font-medium">Humidity</p>
+                <p className="text-3xl font-bold text-foreground">{result.weather.humidity}%</p>
               </div>
-              <div className="space-y-1 col-span-2 md:col-span-1">
-                <p className="text-sm text-muted-foreground">Conditions</p>
-                <p className="text-lg font-semibold text-foreground capitalize">
+              <div className="space-y-2 text-center p-4 rounded-lg bg-muted/30">
+                <p className="text-xs uppercase tracking-wide text-muted-foreground font-medium">Conditions</p>
+                <p className="text-base font-semibold text-foreground capitalize pt-2">
                   {result.weather.description}
                 </p>
               </div>
             </div>
           </Card>
 
-          <Card className="p-6 shadow-medium bg-gradient-to-br from-primary/5 to-accent/5 border-2 border-primary/20">
-            <div className="flex items-center gap-3 mb-4">
-              <Sprout className="h-6 w-6 text-primary" />
-              <h3 className="text-xl font-semibold text-foreground">AI Farming Recommendations</h3>
-            </div>
-            <div className="prose prose-sm max-w-none">
-              <div className="text-foreground whitespace-pre-wrap leading-relaxed">
-                {result.recommendations}
+          <Card className="p-8 shadow-soft border border-border/50 bg-card/50 backdrop-blur">
+            <div className="flex items-center gap-3 mb-6">
+              <div className="p-2 bg-secondary/10 rounded-lg">
+                <Sprout className="h-5 w-5 text-secondary" />
               </div>
+              <h3 className="text-xl font-semibold text-foreground">Farming Recommendations</h3>
+            </div>
+            <div className="text-foreground/90 whitespace-pre-wrap leading-relaxed text-base">
+              {result.recommendations}
             </div>
           </Card>
         </div>
