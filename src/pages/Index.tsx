@@ -2,8 +2,6 @@ import { Leaf } from "lucide-react";
 import { FarmAnalyzer } from "@/components/FarmAnalyzer";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import tomatoesImg from "@/assets/tomatoes.png";
-import cropsImg from "@/assets/crops.png";
 
 const Index = () => {
   return (
@@ -14,12 +12,10 @@ const Index = () => {
         <header className="text-center mb-16 space-y-6 animate-fade-in relative">
           <div className="absolute inset-0 bg-gradient-to-b from-background via-muted/20 to-background rounded-3xl" />
           <div className="relative py-12">
-            <div className="flex items-center justify-center gap-6 mb-6">
-              <img src={tomatoesImg} alt="Fresh tomatoes" className="h-24 w-24 object-contain drop-shadow-lg animate-fade-in" style={{ animationDelay: "0.1s" }} />
+            <div className="flex items-center justify-center gap-3 mb-6">
               <div className="p-4 bg-gradient-earth rounded-3xl shadow-medium">
                 <Leaf className="h-16 w-16 text-white" />
               </div>
-              <img src={cropsImg} alt="Farm crops" className="h-24 w-24 object-contain drop-shadow-lg animate-fade-in" style={{ animationDelay: "0.2s" }} />
             </div>
             <h1 className="text-6xl md:text-7xl font-bold tracking-tight text-foreground mb-4">
               SmartShamba
