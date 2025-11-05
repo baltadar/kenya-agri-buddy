@@ -6,13 +6,22 @@ import { Loader2, MapPin, CloudRain, Sprout } from "lucide-react";
 import { toast } from "sonner";
 import { supabase } from "@/integrations/supabase/client";
 
+interface DailyForecast {
+  date: string;
+  temp: number;
+  humidity: number;
+  description: string;
+  rainProbability: number;
+  rainfall: number;
+}
+
 interface AnalysisResult {
   location: string;
   weather: {
     temp: number;
     humidity: number;
     description: string;
-    rainfall?: string;
+    forecast: DailyForecast[];
   };
   recommendations: string;
 }
@@ -111,12 +120,38 @@ export const FarmAnalyzer = () => {
             </div>
           </Card>
 
+          {result.weather.forecast && result.weather.forecast.length > 0 && (
+            <Card className="p-8 shadow-soft border border-border/50 bg-card/50 backdrop-blur">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="p-2 bg-secondary/10 rounded-lg">
+                  <CloudRain className="h-5 w-5 text-secondary" />
+                </div>
+                <h3 className="text-xl font-semibold text-foreground">5-Day Forecast</h3>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
+                {result.weather.forecast.map((day, idx) => (
+                  <div key={idx} className="p-4 rounded-lg bg-muted/30 space-y-2">
+                    <p className="text-xs uppercase tracking-wide text-muted-foreground font-medium">
+                      Day {idx + 1}
+                    </p>
+                    <p className="text-2xl font-bold text-foreground">{day.temp}°C</p>
+                    <p className="text-xs text-muted-foreground capitalize">{day.description}</p>
+                    <div className="pt-2 border-t border-border/30">
+                      <p className="text-xs text-muted-foreground">Rain: {day.rainProbability}%</p>
+                      <p className="text-xs text-muted-foreground">Humidity: {day.humidity}%</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </Card>
+          )}
+
           <Card className="p-8 shadow-soft border border-border/50 bg-card/50 backdrop-blur">
             <div className="flex items-center gap-3 mb-6">
-              <div className="p-2 bg-secondary/10 rounded-lg">
-                <Sprout className="h-5 w-5 text-secondary" />
+              <div className="p-2 bg-accent/10 rounded-lg">
+                <Sprout className="h-5 w-5 text-accent" />
               </div>
-              <h3 className="text-xl font-semibold text-foreground">Farming Recommendations</h3>
+              <h3 className="text-xl font-semibold text-foreground">AI Farming Recommendations</h3>
             </div>
             <div className="text-foreground/90 whitespace-pre-wrap leading-relaxed text-base">
               {result.recommendations}

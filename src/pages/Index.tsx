@@ -7,7 +7,7 @@ const Index = () => {
       <div className="container mx-auto px-4 py-16 max-w-5xl">
         <header className="text-center mb-16 space-y-6 animate-fade-in">
           <div className="flex items-center justify-center gap-3 mb-2">
-            <div className="p-4 bg-gradient-sky rounded-3xl shadow-medium">
+            <div className="p-4 bg-gradient-earth rounded-3xl shadow-medium">
               <Leaf className="h-12 w-12 text-white" />
             </div>
           </div>
@@ -15,7 +15,7 @@ const Index = () => {
             SmartFarm AI
           </h1>
           <p className="text-lg text-muted-foreground max-w-xl mx-auto leading-relaxed">
-            Real-time weather insights and AI-powered farming recommendations for Kenyan farmers
+            Real weather forecasts and AI-powered crop recommendations for Kenyan farmers
           </p>
         </header>
 
